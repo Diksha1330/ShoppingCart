@@ -1,0 +1,17 @@
+D:\Projects\ShoppingCart\ShoppingCart\bin\Debug\netstandard2.0\ShoppingCart.deps.json
+D:\Projects\ShoppingCart\ShoppingCart\bin\Debug\netstandard2.0\ShoppingCart.dll
+D:\Projects\ShoppingCart\ShoppingCart\bin\Debug\netstandard2.0\ref\ShoppingCart.dll
+D:\Projects\ShoppingCart\ShoppingCart\bin\Debug\netstandard2.0\ShoppingCart.pdb
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.csproj.AssemblyReference.cache
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\View\Detail.xaml.g.cs
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\View\Login.xaml.g.cs
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.AssemblyInfoInputs.cache
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.AssemblyInfo.cs
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.csproj.CoreCompileInputs.cache
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.dll
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ref\ShoppingCart.dll
+D:\Projects\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.pdb
