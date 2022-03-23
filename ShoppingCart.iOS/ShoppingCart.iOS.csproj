@@ -136,4 +136,16 @@
   <ItemGroup>
     <Folder Include="Renderer\" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_orderhistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_wishlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_notification.png" />
+  </ItemGroup>
 </Project>

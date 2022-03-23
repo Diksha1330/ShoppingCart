@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.View.MasterDetailScreenFlyout" NavigationPage.HasNavigationBar="False"
+             Title="Flyout">
+  <StackLayout>
+    <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="None" BackgroundColor="White"
+              HasUnevenRows="true"
+              ItemsSource="{Binding MenuItems}">
+      <ListView.Header>
+                <Grid BackgroundColor="{StaticResource OrangeBackgroundColor}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+          </Grid.RowDefinitions>
+                    <Grid Grid.Column="1"
+              Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="profileimg.png"
+                            WidthRequest="120"   
+                           HeightRequest="120"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start">
+                                <Image.Clip>
+                                <EllipseGeometry
+                                    Center="50,50"
+                                    RadiusX="50"
+                                    RadiusY="50"/>      
+                                </Image.Clip>
+                        </Image>
+                        <StackLayout Grid.Column="1" Margin="15,0,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="Kishor Deshkar" FontAttributes="Bold" FontSize="Large" ></Label>
+                            <Label Text="ram@gmail.com"  ></Label>
+                            
+                        </StackLayout>
+                    </Grid>
+         </Grid>
+      </ListView.Header>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal" Padding="25,15,10,15" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" >
+                            <Image Source="{Binding TitleImage}" HeightRequest="20" WidthRequest="25"></Image>
+                            </StackLayout>
+                            <Label VerticalOptions="FillAndExpand" 
+                    VerticalTextAlignment="Center" 
+                    Text="{Binding Title}" 
+                    FontSize="20"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
