@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.View.Register">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Placeholder="Name"
+                Text="{Binding Username}">
+                
+            </Entry>
+
+            <Entry
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Placeholder="Email Id"
+                Text="{Binding EmailId}"/>
+
+            <Entry
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Placeholder="Password"
+                Text="{Binding Password}"/>
+            <Entry
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Placeholder="Confiirm Password"
+                Text="{Binding ConfirmPassword}"/>
+            <Button
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Text="REGISTER"
+                Command="{Binding RegisterButtonCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
