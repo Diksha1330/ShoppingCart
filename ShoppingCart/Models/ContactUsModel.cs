@@ -4,11 +4,16 @@ using System.Text;
 
 namespace ShoppingCart.Models
 {
-    public class LoginModel
+    public class ContactUsModel
     {
+        public string Name { get; set; }
+
         public string EmailId { get; set; }
 
-        public string Password { get; set; }
+        public string Message
+        {
+            get; set;
 
+        }
     }
 }

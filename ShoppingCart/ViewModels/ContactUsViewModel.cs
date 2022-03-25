@@ -9,14 +9,24 @@ using Xamarin.Forms;
 
 namespace ShoppingCart.ViewModels
 {
-    public class LoginViewModel:BaseViewModel
+    public class ContactUsViewModel:BaseViewModel
     {
-        public LoginViewModel(ContentPage LoginView)
-        {
-            m_view = LoginView;
+        
 
+        public ContactUsViewModel(ContentPage ContactUsView)
+        {
+            m_view = ContactUsView;
         }
-        #region Properties
+
+        #region properties
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; RaisePropertyChanged(() => Name); }
+        }
+
         private string emailid;
 
         public string EmailId
@@ -24,26 +34,28 @@ namespace ShoppingCart.ViewModels
             get { return emailid; }
             set { emailid = value; RaisePropertyChanged(() => EmailId); }
         }
-        private string password;
+        private string message;
 
-        public string Password
+        public string Message
         {
-            get { return password; }
-            set { password = value; RaisePropertyChanged(() => Password); }
+            get { return message; }
+            set { message = value; }
         }
+
+
 
         #endregion
 
         #region Command 
 
-        public ICommand LoginButtonCommand { get { return new Command(async () => await LoginButtonCommandAction()); } }
+        public ICommand SendButtonCommand { get { return new Command(async () => await SendButtonCommandAction()); } }
 
-        private async Task LoginButtonCommandAction()
+        private async Task SendButtonCommandAction()
         {
             try
             {
                 await m_view.Navigation.PopAsync();
-                LoginModel login = new LoginModel();
+                ContactUsModel login = new ContactUsModel();
                 //login.UserName;
                 PushContentPage(new Detail());
             }
@@ -53,5 +65,6 @@ namespace ShoppingCart.ViewModels
             }
         }
         #endregion
+
     }
 }

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.View.PaymentSuccess"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition  Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image
+                Grid.Row="0"
+                Margin="0,180,0,30"
+                HeightRequest="100"
+                Source="ic_success" />
+            <Label
+                Grid.Row="1"
+                  Text="PAYMENT SUCCESS"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="Center"
+                  FontSize="Large"
+                FontAttributes="Bold"/>
+            <Label 
+                Grid.Row="2"
+                WidthRequest="1000"
+                Text="Thank you for your payment. An automated payment receipt will be sent to your registered email."                  
+                FontSize="Body"
+                HorizontalTextAlignment="Center"
+                Margin="20,0,20,0"
+                />
+            <Button
+                  Command="{Binding ButtonCommand}" 
+                  CornerRadius="20"
+                  FontSize="Medium"
+                  HeightRequest="46"
+                  HorizontalOptions="Center"
+                  Text="CONTINUE SHOPPING"
+                  Margin="5,20,5,0"
+                  Padding="20,0,20,0"
+                  FontAttributes="Bold"  
+                  Grid.Row="3" 
+                  BackgroundColor="{x:StaticResource OrangeBackgroundColor}"
+                  TextColor="White"/>
+        </Grid>
+    </ContentPage.Content>
+   
+</ContentPage>

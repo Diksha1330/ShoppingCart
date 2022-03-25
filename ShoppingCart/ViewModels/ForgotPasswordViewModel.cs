@@ -15,17 +15,17 @@ namespace ShoppingCart.ViewModels
         {
             m_view = ForgotPasswordView;
         }
-        #region
+        #region properties
         private string emailid;
 
         public string EmailId
         {
             get { return emailid; }
-            set { emailid = value; }
+            set { emailid = value; RaisePropertyChanged(() => EmailId); }
         }
         #endregion
 
-        #region
+        #region command
 
         public ICommand ForgotPasswordButtonCommand { get { return new Command(async () => await ForgotPasswordButtonCommandAction()); } }
 

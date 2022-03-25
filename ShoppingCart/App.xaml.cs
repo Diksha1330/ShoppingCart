@@ -11,7 +11,7 @@ namespace ShoppingCart
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new PaymentSuccess());
         }
 
         protected override void OnStart()

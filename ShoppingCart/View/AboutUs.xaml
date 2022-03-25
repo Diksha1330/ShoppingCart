@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.View.AboutUs"
+             Title="About Us"
+             BackgroundColor="{x:StaticResource BackgroundColor}">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition  Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image
+                Grid.Row="0"
+                Margin="0,80,0,20"
+                HeightRequest="100"
+                Source="logo" />
+            <Label
+                Grid.Row="1"
+                  Text="{Binding Version}"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="Center"
+                  FontSize="Small"/>
+            <Label
+                Grid.Row="2"
+                  Text="{Binding ProductString}"
+                  FontAttributes="Bold"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="Center"
+                  FontSize="Title"/>
+            <Label 
+                Grid.Row="3"
+                WidthRequest="1000"
+                Text="{Binding AboutProducts}"                  
+                FontSize="Body"
+                HorizontalTextAlignment="Center"
+                Margin="20,0,20,0"
+                />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

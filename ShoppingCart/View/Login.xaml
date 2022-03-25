@@ -1,9 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShoppingCart.View.Login">
+             x:Class="ShoppingCart.View.Login"
+               BackgroundColor="{x:StaticResource BackgroundColor}"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+        <ScrollView>
+            <Grid Margin="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+
+                <Image
+                Grid.Row="0"
+                Margin="50"
+                HeightRequest="150"
+                Source="logo" />
+
+
+                <Entry Text="{Binding Username}"
+                Placeholder="Email ID" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand" 
+                Grid.Row="1"
+                Margin="5"/>
+
+                <Entry Text="{Binding Password}"
+                   Placeholder="Password"
+                   IsPassword="True" 
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   Grid.Row="2" 
+                   Margin="5"/>
+
+                <Label Text="Forgot password"
+                   Margin="5" 
+                   HorizontalOptions="End"
+                   VerticalOptions="FillAndExpand" 
+                   TextColor="{x:StaticResource OrangeBackgroundColor}"
+                   Grid.Row="3"/>
+
+                <Button
+                Command="{Binding LoginButtonCommand}" CornerRadius="25"
+                FontSize="Medium"
+                HeightRequest="46"
+                Text="LOGIN"
+                Margin="5,10,5,0"
+                FontAttributes="Bold"  
+                VerticalOptions="FillAndExpand"  
+                Grid.Row="4" 
+                BackgroundColor="{x:StaticResource OrangeBackgroundColor}"
+                TextColor="White"/>
+
+                <Label Grid.Row="5" 
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="StartAndExpand">
+                    <Label.FormattedText >
+                        <FormattedString>
+                            <FormattedString.Spans >
+                                <Span Text="Don't have an account?"/>
+                                <Span Text="Register Now"
+                                      TextColor="{x:StaticResource OrangeBackgroundColor}"
+                                      FontAttributes="Bold"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+        </ScrollView>
+        <!--<StackLayout Orientation="Vertical">
         
             <Entry
                 VerticalOptions="CenterAndExpand"
@@ -22,6 +93,6 @@
                 Text="Login">
                 
             </Button>
-        </StackLayout>
+        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>
