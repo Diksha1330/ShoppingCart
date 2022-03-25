@@ -148,4 +148,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_notification.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_myorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_cart.png" />
+  </ItemGroup>
 </Project>

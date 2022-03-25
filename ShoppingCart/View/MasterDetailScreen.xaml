@@ -10,7 +10,7 @@
   <FlyoutPage.Detail>
     <NavigationPage>
       <x:Arguments>
-        <pages:MasterDetailScreenDetail />
+        <pages:DashboardPage />
       </x:Arguments>
     </NavigationPage>
   </FlyoutPage.Detail>
