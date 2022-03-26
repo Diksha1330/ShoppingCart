@@ -55,7 +55,7 @@ namespace ShoppingCart.ViewModels
 
         #endregion
 
-        #region
+        #region command
 
         public ICommand RegisterButtonCommand { get { return new Command(async () => await RegisterButtonCommandAction()); } }
 
@@ -67,6 +67,23 @@ namespace ShoppingCart.ViewModels
                 RegisterModel login = new RegisterModel();
                 //login.UserName;
                 PushContentPage(new Detail());
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public ICommand LoginCommand { get { return new Command(async () => await LoginCommandAction()); } }
+
+        private async Task LoginCommandAction()
+        {
+            try
+            {
+                await m_view.Navigation.PopAsync();
+                RegisterModel login = new RegisterModel();
+                //login.UserName;
+                PushContentPage(new Login());
             }
             catch (Exception ex)
             {
