@@ -6,10 +6,10 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.BarItemColor="Black"
-            android:TabbedPage.BarSelectedItemColor="Red">
+            android:TabbedPage.BarSelectedItemColor="{StaticResource OrangeBackgroundColor}">
   <!--Pages can be added as references or inline-->
   <ContentPage Title="Home" IconImageSource="{x:Static const:Constants.HomeIcon}" />
     <ContentPage Title="Wishlist" IconImageSource="{x:Static const:Constants.WishlistIcon}" />
     <ContentPage Title="Cart" IconImageSource="{x:Static const:Constants.CartIcon}" />
-    <ContentPage Title="My Orders" IconImageSource="{x:Static const:Constants.WishlistIcon}"/>
+    <ContentPage Title="My Orders" IconImageSource="{x:Static const:Constants.MyOrderIcon}"/>
 </TabbedPage>
