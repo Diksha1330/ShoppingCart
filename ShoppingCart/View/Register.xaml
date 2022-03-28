@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCart.View.Register"
+             xmlns:const="clr-namespace:ShoppingCart.Constants"
              NavigationPage.HasNavigationBar="False"
-               BackgroundColor="{x:StaticResource BackgroundColor}"
+             BackgroundColor="{x:StaticResource BackgroundColor}"
              >
     <ContentPage.Content>
         <ScrollView>
@@ -20,55 +21,59 @@
                 </Grid.RowDefinitions>
 
                 <Image
-                Grid.Row="0"
-                Margin="50"
-                HeightRequest="150"
-                Source="logo" />
+                    Grid.Row="0"
+                    Margin="50"
+                    HeightRequest="150"
+                    Source="{x:Static const:Constants.Logo}" />
 
 
-                <Entry Placeholder="Name"
-                Text="{Binding Username}"
-                HorizontalOptions="FillAndExpand" 
-                VerticalOptions="FillAndExpand" 
-                Grid.Row="1"
-                Margin="5"/>
+                <Entry
+                    Placeholder="{x:Static const:Constants.Name}"
+                    Text="{Binding Username}"
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand" 
+                    Grid.Row="1"
+                    Margin="5"/>
 
-                <Entry  Placeholder="Email Id"
-                Text="{Binding EmailId}"
-                HorizontalOptions="FillAndExpand" 
-                VerticalOptions="FillAndExpand" 
-                Grid.Row="2"
-                Margin="5"/>
+                <Entry 
+                   Placeholder="{x:Static const:Constants.EmailId}"
+                    Text="{Binding EmailId}"
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand" 
+                    Grid.Row="2"
+                    Margin="5"/>
 
-                <Entry Text="{Binding Password}"
-                   Placeholder="Password"
+                <Entry
+                   Text="{Binding Password}"
+                   Placeholder="{x:Static const:Constants.Password}"
                    IsPassword="True" 
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand"
                    Grid.Row="3" 
                    Margin="5"/>
 
-                <Entry  Placeholder="Confiirm Password"
-                Text="{Binding ConfirmPassword}"
+                <Entry  
+                   Placeholder="{x:Static const:Constants.ConfirmPassword}"
+                   Text="{Binding ConfirmPassword}"
                    IsPassword="True" 
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand"
                    Grid.Row="4" 
                    Margin="5"/>
 
-
-
                 <Button
-                Text="REGISTER"
-                Command="{Binding RegisterButtonCommand}" CornerRadius="25"
-                FontSize="Medium"
-                HeightRequest="46"
-                Margin="5,12,5,0"
-                FontAttributes="Bold"  
-                VerticalOptions="FillAndExpand"  
-                Grid.Row="5" 
-                BackgroundColor="{x:StaticResource OrangeBackgroundColor}"
-                TextColor="White"/>
+                     Text="{x:Static const:Constants.RegisterButton}"
+                    Command="{Binding RegisterButtonCommand}"
+                    CornerRadius="25"
+                    FontSize="Medium"
+                    TextTransform="None"
+                    HeightRequest="46"
+                    Margin="5,12,5,0"
+                    FontAttributes="Bold"  
+                    VerticalOptions="FillAndExpand"  
+                    Grid.Row="5" 
+                    TextColor="{x:StaticResource ButtonFontColor}"
+                    BackgroundColor="{x:StaticResource OrangeBackgroundColor}"/>
 
                 <Label Grid.Row="6" 
                    HorizontalOptions="CenterAndExpand" 
@@ -76,44 +81,23 @@
                     <Label.FormattedText >
                         <FormattedString>
                             <FormattedString.Spans >
-                                <Span Text="Already have an account?"/>
-                                <Span Text="Login Now" TextColor="{x:StaticResource OrangeBackgroundColor}" FontAttributes="Bold"/>
+                                <Span
+                                    Text="{x:Static const:Constants.HaveAccount}"/>
+                                <Span
+                                Text="{x:Static const:Constants.Space}"/>
+                                <Span
+                                    Text="{x:Static const:Constants.LoginNow}" 
+                                    TextColor="{x:StaticResource OrangeBackgroundColor}" 
+                                    FontAttributes="Bold">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding LoginCommand}" />
+                                    </Span.GestureRecognizers>
+                                </Span>
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
             </Grid>
         </ScrollView>
-        <!--<StackLayout>
-            <Entry
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Placeholder="Name"
-                Text="{Binding Username}">
-                
-            </Entry>
-
-            <Entry
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Placeholder="Email Id"
-                Text="{Binding EmailId}"/>
-
-            <Entry
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Placeholder="Password"
-                Text="{Binding Password}"/>
-            <Entry
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Placeholder="Confiirm Password"
-                Text="{Binding ConfirmPassword}"/>
-            <Button
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Text="REGISTER"
-                Command="{Binding RegisterButtonCommand}"/>
-        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>

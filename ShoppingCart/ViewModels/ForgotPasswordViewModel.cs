@@ -43,6 +43,28 @@ namespace ShoppingCart.ViewModels
 
             }
         }
+
+        public ICommand RegisterNowCommand { get { return new Command(async () => await RegisterNowCommandAction()); } }
+
+        private async Task RegisterNowCommandAction()
+        {
+            try
+            {
+                await m_view.Navigation.PopAsync();
+                ForgotPasswordModel login = new ForgotPasswordModel();
+                //login.UserName;
+                PushContentPage(new Register());
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
+
+
+
         #endregion
 
     }

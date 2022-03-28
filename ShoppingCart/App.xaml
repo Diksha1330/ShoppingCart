@@ -6,5 +6,6 @@
         <Color x:Key="NavigationPrimary">#FED325</Color>
         <Color x:Key="OrangeBackgroundColor">#FED325</Color>
         <Color x:Key="BackgroundColor">#FFFFFF</Color>
+        <Color x:Key="ButtonFontColor">#FFFFFF</Color>
     </Application.Resources>
 </Application>

@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCart.View.AboutUs"
+             xmlns:const="clr-namespace:ShoppingCart.Constants"
              Title="About Us"
-             BackgroundColor="{x:StaticResource BackgroundColor}">
+             BackgroundColor="{x:StaticResource BackgroundColor}"
+           >
     <ContentPage.Content>
         <Grid HorizontalOptions="Center">
             <Grid.RowDefinitions>
@@ -17,7 +19,7 @@
                 Grid.Row="0"
                 Margin="0,80,0,20"
                 HeightRequest="100"
-                Source="logo" />
+                Source="{x:Static const:Constants.Logo}" />
             <Label
                 Grid.Row="1"
                   Text="{Binding Version}"
@@ -33,7 +35,6 @@
                   FontSize="Title"/>
             <Label 
                 Grid.Row="3"
-                WidthRequest="1000"
                 Text="{Binding AboutProducts}"                  
                 FontSize="Body"
                 HorizontalTextAlignment="Center"
@@ -41,4 +42,4 @@
                 />
         </Grid>
     </ContentPage.Content>
-</ContentPage>
+</ContentPage>  

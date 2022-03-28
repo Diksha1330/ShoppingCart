@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCart.View.ContactUs"
              Title="Contact Us"
+             xmlns:const="clr-namespace:ShoppingCart.Constants"
               BackgroundColor="{x:StaticResource BackgroundColor}"
-             BackgroundImageSource="map">
+             BackgroundImageSource="{x:Static const:Constants.MapBg}">
     <ContentPage.Content>
       
             <Grid>
@@ -20,23 +21,23 @@
                        Margin="40">
                     <StackLayout>
                         <Label
-                            Text="Shooping world"
+                            Text="{x:Static const:Constants.ContactUsTitle}"
                             VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand"
                             FontAttributes="Bold"
                             FontSize="Large"/>
                         <Label
-                            Text="9 , Omkar Society, Dcabin, 380019"
+                            Text="{x:Static const:Constants.ContactUsAddress}"
                            VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand"
                             FontSize="Medium"/>
                         <Label
-                            Text="shoop@gmail.com"
+                            Text="{x:Static const:Constants.ContactUsMailId}"
                            VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand"
                             FontSize="Medium"/>
                         <Label
-                            Text="+91 9874563210"
+                            Text="{x:Static const:Constants.ContactUsNumber}"
                            VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand"
                             FontSize="Medium"/>
@@ -73,24 +74,24 @@
 
 
                             <Entry Text="{Binding Name}"
-                            Placeholder="Name" 
+                            Placeholder="{x:Static const:Constants.Name}" 
                             HorizontalOptions="FillAndExpand" 
                             VerticalOptions="FillAndExpand" 
                             Grid.Row="1"
                             Margin="5"/>
 
                             <Entry Text="{Binding EmailId}"
-                            Placeholder="Email ID" 
+                            Placeholder="{x:Static const:Constants.EmailId}" 
                             HorizontalOptions="FillAndExpand" 
                             VerticalOptions="FillAndExpand" 
                             Grid.Row="2"
                             Margin="5"/>
 
                             <Editor Text="{Binding Message}"
-                            Placeholder="Message" 
+                            Placeholder="{x:Static const:Constants.Message}" 
                             HorizontalOptions="FillAndExpand" 
                             VerticalOptions="FillAndExpand" 
-                                HeightRequest="100"
+                            HeightRequest="100"
                             Grid.Row="3"
                             Margin="5"/>
 
@@ -100,14 +101,14 @@
                             FontSize="Medium"
                             HeightRequest="46"
                             HorizontalOptions="Center"
-                            Text="SEND"
+                            TextTransform="None"
+                            Text="{x:Static const:Constants.SendButton}"
                             Margin="5,10,5,0"
-                                Padding="50,0,50,0"
+                            Padding="50,0,50,0"
                             FontAttributes="Bold"  
                             Grid.Row="4" 
                             BackgroundColor="{x:StaticResource OrangeBackgroundColor}"
                             TextColor="White"/>
-
 
                         </Grid>
                     </StackLayout>

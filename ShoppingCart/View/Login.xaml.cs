@@ -17,6 +17,7 @@ namespace ShoppingCart.View
         {
             InitializeComponent();
             this.BindingContext = new LoginViewModel(this);
+            
         }
     }
 }
