@@ -2,13 +2,20 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCart.View.DashboardPage" 
+            xmlns:local="clr-namespace:ShoppingCart.View.DashboardScreens"
             xmlns:const="clr-namespace:ShoppingCart.Constants"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            android:TabbedPage.BarItemColor="Black"
-            android:TabbedPage.BarSelectedItemColor="{StaticResource OrangeBackgroundColor}">
+           
+            Title="Shopping Cart"           
+            android:TabbedPage.BarItemColor="DarkSlateGray"
+            android:TabbedPage.BarSelectedItemColor="OrangeRed">
   <!--Pages can be added as references or inline-->
-  <ContentPage Title="Home" IconImageSource="{x:Static const:Constants.HomeIcon}" />
+    <NavigationPage Title="Home" IconImageSource="{x:Static const:Constants.HomeIcon}" NavigationPage.HasNavigationBar="False">
+        <x:Arguments>
+            <local:Home />
+        </x:Arguments>
+    </NavigationPage>
     <ContentPage Title="Wishlist" IconImageSource="{x:Static const:Constants.WishlistIcon}" />
     <ContentPage Title="Cart" IconImageSource="{x:Static const:Constants.CartIcon}" />
     <ContentPage Title="My Orders" IconImageSource="{x:Static const:Constants.MyOrderIcon}"/>
