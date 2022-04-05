@@ -160,4 +160,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_cart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_favunselected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_favselected.png" />
+  </ItemGroup>
 </Project>

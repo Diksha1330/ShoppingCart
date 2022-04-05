@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
-             x:Class="ShoppingCart.View.ProductsListing" NavigationPage.HasNavigationBar="False">
+             x:Class="ShoppingCart.View.ProductsListing" NavigationPage.HasNavigationBar="False"
+             x:Name="ProductList">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <controls:FlowListView FlowColumnCount="2"
@@ -12,7 +13,19 @@
                         FlowItemsSource="{Binding Products}">
                 <controls:FlowListView.FlowColumnTemplate>
                     <DataTemplate>
-                        <StackLayout
+                        <!--Frame to have rounded corners-->
+                        <Frame
+                                        Margin="8"
+                                        Padding="0"
+                                        BackgroundColor="White"
+                                        BorderColor="White"
+                                        CornerRadius="4"
+                                        HasShadow="true"
+                                       >
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path= BindingContext.ProductsTappedCommand, Source={x:Reference ProductList}}" CommandParameter="{Binding .}"  NumberOfTapsRequired="1"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout
                                          Margin="10,10"
                                         Padding="0"
                                         HorizontalOptions="FillAndExpand"
@@ -85,7 +98,7 @@
 
 
                         </StackLayout>
-                        <!--</Frame>-->
+                        </Frame>
 
                     </DataTemplate>
                 </controls:FlowListView.FlowColumnTemplate>

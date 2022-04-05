@@ -18,12 +18,12 @@
                 </Grid.RowDefinitions>
             <Image Grid.Row="0"  BackgroundColor="FloralWhite" Source="{Binding BannerImage}" />
 
-            <StackLayout Grid.Row="1"
+                <StackLayout Grid.Row="1"
                         Margin="16,25,16,0"
                         Orientation="Horizontal"
                         Spacing="0">
 
-                <Label
+                    <Label
                             Margin="0,5,0,0"
                             
                             FontSize="12"
@@ -34,25 +34,36 @@
                             TextColor="DarkGray"
                             VerticalOptions="Center" />
 
-            </StackLayout>
+                </StackLayout>
 
-            <controls:FlowListView Grid.Row="2" FlowColumnCount="2"
-                      SeparatorVisibility="None" HasUnevenRows="false"
-                        Margin="8,0" RowHeight="250" FlowItemTappedCommand="{Binding NewArrivalTappedCommand}"
+                <controls:FlowListView Grid.Row="2" FlowColumnCount="2" 
+                      SeparatorVisibility="None" HasUnevenRows="false" 
+                        Margin="8,0" RowHeight="250" 
                     VerticalOptions="FillAndExpand"   SelectionMode="None"
                     HorizontalOptions="FillAndExpand" 
                         FlowItemsSource="{Binding NewArrivalProducts}">
                     <controls:FlowListView.FlowColumnTemplate>
-                    <DataTemplate>                   
-                          <StackLayout
-                                        Margin="10,10"
+                    <DataTemplate>
+                            <!--Frame to have rounded corners-->
+                            <Frame
+                                        Margin="8"
+                                        Padding="0"
+                                        BackgroundColor="White"
+                                        BorderColor="White"
+                                        CornerRadius="4"
+                                        HasShadow="true"
+                                        HeightRequest="350"
+                                        WidthRequest="350">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path= BindingContext.NewArrivalTappedCommand, Source={x:Reference HomePage}}" CommandParameter="{Binding .}"  NumberOfTapsRequired="1"/>
+                                </Frame.GestureRecognizers>
+                                <StackLayout
+                                        Margin="5,5"
                                         Padding="0"
                                         HorizontalOptions="FillAndExpand"
                                         Spacing="0"
                                         VerticalOptions="StartAndExpand">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding NewArrivalTappedCommand, Source={x:Reference HomePage}}" CommandParameter="{Binding .}"/>
-                                </StackLayout.GestureRecognizers>
+                                
 
                                 <!--  Product image  -->
 
@@ -65,9 +76,7 @@
                                             Source="{Binding PreviewImage}"
                                             VerticalOptions="Center"
                                             WidthRequest="200" >
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding NewArrivalTappedCommand, Source={x:Reference HomePage}}" CommandParameter="{Binding .}"/>
-                                    </Image.GestureRecognizers>
+                                    
 
                                 </Image>
 
@@ -82,7 +91,7 @@
                                             TextColor="DarkGray" />
 
                             </StackLayout>
-                        <!--</Frame>-->
+                        </Frame>
                    
                     </DataTemplate>                        
                     </controls:FlowListView.FlowColumnTemplate>
@@ -127,7 +136,7 @@
                                         WidthRequest="350">
 
                                     <StackLayout
-                                            Margin="0"
+                                            Margin="5,5"
                                             Padding="0"
                                             HorizontalOptions="CenterAndExpand"
                                             Spacing="0"
@@ -215,7 +224,7 @@
                                     WidthRequest="230">
 
                                     <StackLayout
-                                        Margin="0"
+                                       Margin="5,5"
                                         Padding="0"
                                         HorizontalOptions="FillAndExpand"
                                         Spacing="0"
@@ -246,8 +255,7 @@
 
                                           <!--Product Description-->  
                                         <Label
-                                            Margin="16,4"
-                                            
+                                            Margin="16,4"                                            
                                             FontSize="12"
                                             HorizontalOptions="StartAndExpand"
                                             LineHeight="1.25"
@@ -262,26 +270,22 @@
                                             Spacing="2">
 
                                               <!--Product Price-->  
-                                            <Label
-                                              
-                                                FontSize="{OnIdiom Default=20,
-                                                                   Desktop=24}"
-                                           
+                                            <Label                                              
+                                                FontSize="{OnIdiom Default=12,
+                                                                   Desktop=24}"                                           
                                                 Text="{Binding DiscountPrice, StringFormat='${0:0 }'}"
-                                                TextColor="{DynamicResource PrimaryColor}" />
+                                                TextColor="DarkGray" />
 
                                             <Label
                                                 
-                                                FontSize="12"
-                                            
+                                                FontSize="10"                                            
                                                 Text="{Binding ActualPrice, StringFormat='${0:0.00} '}"
                                                 TextDecorations="Strikethrough"
                                                 VerticalTextAlignment="Center" />
 
                                             <Label
                                                 
-                                                FontSize="12"
-                                               
+                                                FontSize="10"                                               
                                                 Text="{Binding DiscountPercent, StringFormat=' ({0}% OFF)'}"
                                                 TextColor="{x:StaticResource OrangeBackgroundColor}" />
 

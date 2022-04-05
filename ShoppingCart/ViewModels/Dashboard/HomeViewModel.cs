@@ -50,13 +50,21 @@ namespace ShoppingCart.ViewModels.Dashboard
         {
             m_view = view;
             RecommendedProducts = new ObservableCollection<ProductModel>();
-            RecommendedProducts.Add(new ProductModel { Name = "Men's wear", PreviewImage="ic_jeans.jpg", IsFavourite=true });
+            RecommendedProducts.Add(new ProductModel { Name = "Men's wear", PreviewImage="ic_jeans.jpg", IsFavourite=true,ActualPrice=540,Description="Fiind some exclusive styles",DiscountPercent=10 ,OverallRating=5,TotalQuantity=540 });
+            RecommendedProducts.Add(new ProductModel { Name = "Men's wear", PreviewImage="ic_jeans.jpg", IsFavourite=true,ActualPrice=540,Description="Fiind some exclusive styles",DiscountPercent=10 ,OverallRating=5,TotalQuantity=540 });
+            RecommendedProducts.Add(new ProductModel { Name = "Men's wear", PreviewImage="ic_jeans.jpg", IsFavourite=true,ActualPrice=540,Description="Fiind some exclusive styles",DiscountPercent=10 ,OverallRating=5,TotalQuantity=540 });
+            RecommendedProducts.Add(new ProductModel { Name = "Men's wear", PreviewImage="ic_jeans.jpg", IsFavourite=true,ActualPrice=540,Description="Fiind some exclusive styles",DiscountPercent=10 ,OverallRating=5,TotalQuantity=540 });
             RecommendedProducts.Add(new ProductModel { Name = "Women's wear", PreviewImage = "ic_imagedashboard.jpg" });
 
             OfferProducts = new ObservableCollection<ProductModel>();
             OfferProducts.Add(new ProductModel { Name = "Children's wear", OverallRating = 5 ,PreviewImage="ic_jeans.jpg"});
+            OfferProducts.Add(new ProductModel { Name = "Children's wear", OverallRating = 5 ,PreviewImage="ic_jeans.jpg"});
+            OfferProducts.Add(new ProductModel { Name = "Children's wear", OverallRating = 5 ,PreviewImage="ic_jeans.jpg"});
+            OfferProducts.Add(new ProductModel { Name = "Children's wear", OverallRating = 5 ,PreviewImage="ic_jeans.jpg"});
 
             NewArrivalProducts =new ObservableCollection<ProductModel>();
+            NewArrivalProducts.Add(new ProductModel { Name = "Women's wear" ,PreviewImage="ic_imagedashboard.jpg",IsFavourite=true});
+            NewArrivalProducts.Add(new ProductModel { Name = "Women's wear" ,PreviewImage="ic_imagedashboard.jpg",IsFavourite=true});
             NewArrivalProducts.Add(new ProductModel { Name = "Women's wear" ,PreviewImage="ic_imagedashboard.jpg",IsFavourite=true});
             NewArrivalProducts.Add(new ProductModel { Name = "Men's wear", PreviewImage = "ic_jeans.jpg" });
         }
@@ -68,7 +76,7 @@ namespace ShoppingCart.ViewModels.Dashboard
             {
                 PushContentPage(new ProductsListing());
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }

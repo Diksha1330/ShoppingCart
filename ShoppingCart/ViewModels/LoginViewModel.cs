@@ -91,7 +91,8 @@ namespace ShoppingCart.ViewModels
 
                 else
                 {
-                    PushContentPage(new Detail());
+                    //PushContentPage(new MasterDetailScreen());
+                   Application.Current.MainPage=new MasterDetailScreen();
                 }
             }
             catch (Exception ex)
