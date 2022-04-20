@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingCart.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ShoppingCart.View.DashboardScreens
+namespace ShoppingCart.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Cart : ContentPage
@@ -15,6 +16,13 @@ namespace ShoppingCart.View.DashboardScreens
         public Cart()
         {
             InitializeComponent();
+            this.BindingContext = new CartViewModel(this);
+           
+        }
+
+        private void qua_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+           //lbl.Text = e.NewValue;
         }
     }
 }

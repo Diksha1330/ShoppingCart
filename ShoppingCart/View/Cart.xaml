@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.View.Cart" Title="Cart" x:Name="CartPage"
+             xmlns:constants="clr-namespace:ShoppingCart.Constants">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ListView RowHeight="170"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding CartSource}" HasUnevenRows="False" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="0,0,0,10" Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="0">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    
+                                    <RowDefinition Height="5"/>
+                                    
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="7*"/>                                    
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.RowSpan="4" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand">
+                                    <Image Source="{Binding PreviewImage}" Aspect="AspectFill"></Image>
+                                </StackLayout>
+                                
+                                <Label Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" Margin="10,10,0,0" Text="{Binding Name}" FontSize="14" TextColor="{StaticResource TitleColor}"></Label>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" Margin="10,0,0,0" TextColor="{StaticResource NormalTextColor}" FontSize="12"></Label>
+                                <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" Margin="10,0,0,0" VerticalOptions="Start" Orientation="Horizontal">
+                                        <Label TextColor="OrangeRed" TextDecorations="Strikethrough" FontSize="16">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static constants:Constants.RupeeSymbolText}"></Span>
+                                                    <Span Text="{Binding DiscountPrice}"></Span>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label VerticalTextAlignment="Center" TextColor="{StaticResource NormalTextColor}" FontSize="12">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static constants:Constants.RupeeSymbolText}"></Span>
+                                                    <Span Text="{Binding ActualPrice}"></Span>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                    <Label VerticalTextAlignment="Center" TextColor="OrangeRed"    Text="{Binding DiscountPercent, StringFormat=' ({0}% OFF)'}" FontSize="12"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1"  Grid.Row="3" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal">
+              
+                                        <Image Source="{x:Static constants:Constants.PlusIcon}" HeightRequest="20" WidthRequest="20">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding AddQuantityCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Frame x:Name="frame" Margin="10,0,10,0"  Padding="10,3,10,3" CornerRadius="2" Visual="Material" BorderColor="LightGray" HeightRequest="30" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                                        
+                                            <Label x:Name="lbl" Text="{Binding QuantitySelected}" FontSize="Small" VerticalTextAlignment="Center"></Label>
+                                            
+                                        </Frame>
+                                        <Image Source="{x:Static constants:Constants.MinusIcon}" HeightRequest="25" WidthRequest="25">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding MinusQuantityCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </StackLayout>
+                                    <BoxView Grid.ColumnSpan="2" Grid.Row="4" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="10" BackgroundColor="DarkBlue"></BoxView>
+                            </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

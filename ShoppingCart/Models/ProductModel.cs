@@ -1,7 +1,11 @@
 ﻿using ShoppingCart.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace ShoppingCart.Models
 {
@@ -65,6 +69,44 @@ namespace ShoppingCart.Models
 
         public List<Review> Reviews { get; set; }
         public string PreviewImage { get; set; }
+        private int quantitySelected=1;
+
+        public int QuantitySelected
+        {
+            get { return quantitySelected; }
+            set { quantitySelected = value; RaisePropertyChanged(() => QuantitySelected); }
+        }
+        public ICommand AddQuantityCommand { get { return new Command<ProductModel>(async (ProductModel product) => await AddQuantityCommandAction(product)); } }
+
+        private async Task AddQuantityCommandAction(ProductModel productModel)
+        {
+            try
+            {
+                productModel.QuantitySelected++;
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+        }
+
+        public ICommand MinusQuantityCommand { get { return new Command<ProductModel>(async (ProductModel product) => await MinusQuantityCommandAction(product)); } }
+
+        private async Task MinusQuantityCommandAction(ProductModel product)
+        {
+            try
+            {
+                if(quantitySelected > 1)
+                    product.QuantitySelected--;
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+        }
+        //public ObservableCollection<string> QuantitySource { get; set; }
         public List<PreviewImage> PreviewImages { get; set; }
         
         public string Category { get; set; }

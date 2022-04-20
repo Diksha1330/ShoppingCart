@@ -16,6 +16,8 @@ namespace ShoppingCart.Constants
         public static ImageSource WishlistIcon = "ic_wishlist.png";
         public static ImageSource FavSelectedIcon = "ic_favselected.png";
         public static ImageSource FavUnselectedIcon = "ic_favunselected.png";
+        public static ImageSource PlusIcon = "ic_plus.png";
+        public static ImageSource MinusIcon = "ic_minus.png";
         #endregion
 
         #region Diksha
@@ -43,6 +45,7 @@ namespace ShoppingCart.Constants
         public const string LargeSizeText = "L";
         public const string ExtraLargeSizeText = "XL";
         public const string DoubleExtraLargeSizeText = "XXL";
+        public const string RupeeSymbolText = "₹ ";
        
         #endregion
 
