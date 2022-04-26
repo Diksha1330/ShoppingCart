@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Acr.UserDialogs;
 using Foundation;
 using UIKit;
 
@@ -24,6 +24,7 @@ namespace ShoppingCart.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.Forms.FormsMaterial.Init();
+            
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

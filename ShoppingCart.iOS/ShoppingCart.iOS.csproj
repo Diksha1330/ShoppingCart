@@ -123,8 +123,17 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.2.0.564</Version>
+    </PackageReference>
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView">
       <Version>2.0.11</Version>
+    </PackageReference>
+    <PackageReference Include="RatingBarControl">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.1.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
@@ -174,5 +183,11 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ic_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_fillstar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_emptystar.png" />
   </ItemGroup>
 </Project>
