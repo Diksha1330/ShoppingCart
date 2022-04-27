@@ -37,6 +37,9 @@
     <EmbeddedResource Update="View\Cart.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="View\CheckOut.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     
     <EmbeddedResource Update="View\ContactUs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

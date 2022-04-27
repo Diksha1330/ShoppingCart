@@ -18,6 +18,8 @@ namespace ShoppingCart.Constants
         public static ImageSource FavUnselectedIcon = "ic_favunselected.png";
         public static ImageSource PlusIcon = "ic_plus.png";
         public static ImageSource MinusIcon = "ic_minus.png";
+        public static string EmptyStarIcon = "ic_emptystar.png";
+        public static string FillStarIcon = "ic_fillstar.png";
         #endregion
 
         #region Diksha
@@ -46,7 +48,10 @@ namespace ShoppingCart.Constants
         public const string ExtraLargeSizeText = "XL";
         public const string DoubleExtraLargeSizeText = "XXL";
         public const string RupeeSymbolText = "₹ ";
-       
+        public const string RateUsHeaderText = "Enjoying the App?";
+        public const string RateUsText = "Rate your experience using ShoppingCart so far.";
+        
+
         #endregion
 
         #region Diksha

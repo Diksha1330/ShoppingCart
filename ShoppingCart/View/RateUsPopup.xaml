@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCart.View.RateUsPopup"
              xmlns:ratingbarcontrol="clr-namespace:RatingBarControl;assembly=RatingBarControl"
-             xmlns:rg="http://rotorgames.com">
+             xmlns:rg="http://rotorgames.com"
+             xmlns:constant="clr-namespace:ShoppingCart.Constants">
     <rg:PopupPage.Animation>
         <rg:ScaleAnimation
             DurationIn="400"
@@ -19,12 +20,12 @@
 
     
     <StackLayout HeightRequest="250" Margin="15,35,15,25" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-           
-        <Label Text="Enjoying the App?"  FontAttributes="Bold" FontSize="Large"
+
+        <Label Text="{x:Static constant:Constants.RateUsHeaderText}"  FontAttributes="Bold" FontSize="Large"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
-        <Label Text="Rate your experience using ShoppingCart so far." 
+        <Label Text="{x:Static constant:Constants.RateUsText}" 
                 VerticalOptions="StartAndExpand"  FontSize="16"
                 HorizontalOptions="CenterAndExpand" />
         
@@ -32,9 +33,10 @@
                                     x:Name="rtControl" Margin="10" Padding="10"
                                     StarHeightRequest="35"  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
                                     StarWidthRequest="35"  
-                                    EmptyStarImage="ic_emptystar" 
-                                    FillStarImage="ic_fillstar" 
+                                    EmptyStarImage="{x:Static constant:Constants.EmptyStarIcon}" 
+                                    FillStarImage="{x:Static constant:Constants.FillStarIcon}" 
                                     />
+        
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" BorderColor="LightGray" BorderWidth="1" Margin="5,5" BackgroundColor="White" Text="Not Now"/>
     </StackLayout>    
 </rg:PopupPage>
