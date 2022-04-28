@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingCart.View.DashboardScreens;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -33,10 +34,10 @@ namespace ShoppingCart.View
             {
                 MenuItems = new ObservableCollection<MasterDetailScreenFlyoutMenuItem>(new[]
                 {
-                    new MasterDetailScreenFlyoutMenuItem { Id = 0, Title = "Edit Profile",TitleImage="ic_profile.png" },
-                    new MasterDetailScreenFlyoutMenuItem { Id = 1, Title = "Wishlist" ,TitleImage="ic_wishlist.png"},
-                    new MasterDetailScreenFlyoutMenuItem { Id = 2, Title = "Order History",TitleImage="ic_orderhistory.png" },
-                    new MasterDetailScreenFlyoutMenuItem { Id = 3, Title = "Notifications",TitleImage="ic_notification.png" },
+                    new MasterDetailScreenFlyoutMenuItem { Id = 0, Title = "Edit Profile",TitleImage="ic_profile.png" , TargetType=typeof(EditProfile) },
+                    new MasterDetailScreenFlyoutMenuItem { Id = 1, Title = "Wishlist" ,TitleImage="ic_wishlist.png", TargetType=typeof(Wishlist) },
+                    new MasterDetailScreenFlyoutMenuItem { Id = 2, Title = "Order History",TitleImage="ic_orderhistory.png", TargetType=typeof(OrderHistory) },
+                    new MasterDetailScreenFlyoutMenuItem { Id = 3, Title = "Notifications",TitleImage="ic_notification.png", TargetType=typeof(Notifications) },
                    
                 });
             }
