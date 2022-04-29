@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingCart.ViewModels.Dashboard;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace ShoppingCart.View.DashboardScreens
         public Wishlist()
         {
             InitializeComponent();
+            this.BindingContext = new WishlistViewModel(this);
         }
     }
 }

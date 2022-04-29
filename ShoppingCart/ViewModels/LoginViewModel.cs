@@ -51,11 +51,14 @@ namespace ShoppingCart.ViewModels
         {
             try
             {
+                bool pattern=false;
                 await m_view.Navigation.PopAsync();
                 LoginModel login = new LoginModel();
                 Regex EmailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-                bool pattern = EmailRegex.IsMatch(emailIdEntry.Text);
-       
+                if (!string.IsNullOrEmpty(emailIdEntry.Text))
+                {
+                  pattern = EmailRegex.IsMatch(emailIdEntry.Text);
+                }
                 if ((string.IsNullOrEmpty(emailIdEntry.Text) || string.IsNullOrWhiteSpace(emailIdEntry.Text)) && (string.IsNullOrEmpty(passwordEntry.Text) || string.IsNullOrWhiteSpace(passwordEntry.Text)))
                 {
 
@@ -63,9 +66,6 @@ namespace ShoppingCart.ViewModels
                     emailIdEntry.Placeholder = "Email id is required!";
                     passwordEntry.PlaceholderColor = Color.Red;
                     passwordEntry.Placeholder = "Password id is required!";
-
-
-
                 }
                 else if (string.IsNullOrEmpty(emailIdEntry.Text) || string.IsNullOrWhiteSpace(emailIdEntry.Text))
                 {
@@ -87,12 +87,9 @@ namespace ShoppingCart.ViewModels
                 {
                     passwordEntry.PlaceholderColor = Color.Red;
                     passwordEntry.Placeholder = "Password id is required!";
-
                 }
-
                 else
                 {
-                    //PushContentPage(new MasterDetailScreen());
                    Application.Current.MainPage=new MasterDetailScreen();
                 }
             }
