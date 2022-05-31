@@ -17,9 +17,13 @@ namespace ShoppingCart.Constants
         #endregion
 
         #region Diksha
+        public static ImageSource ContactUsIcon = "ic_contactus.png";
+        public static ImageSource AboutUsIcon = "ic_aboutus.png";
+        public static ImageSource SuccessIcon = "ic_success.png";
+
         public static ImageSource Logo = "logo.png";
         public static ImageSource MapBg = "map.png";
-        public static ImageSource SuccessIcon = "ic_success.png";
+       
 
         #endregion
 

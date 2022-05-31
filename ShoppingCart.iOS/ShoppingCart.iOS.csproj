@@ -157,4 +157,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_cart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profileimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_aboutus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_contactus.png" />
+  </ItemGroup>
 </Project>
