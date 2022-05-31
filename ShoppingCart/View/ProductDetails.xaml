@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.View.ProductDetails" 
+             x:Name="ProductDetail"
+             BackgroundColor="White"
+             xmlns:constants="clr-namespace:ShoppingCart.Constants"
+             Title="Product">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" RowSpacing="0" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" >
+            <CarouselView ItemsSource="{Binding PreviewImages}" HeightRequest="400"
+                  IndicatorView="indicatorView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                            <Image Source="{Binding Image}">
+                        
+                    </Image>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="indicatorView"
+                   IndicatorColor="LightGray"
+                   SelectedIndicatorColor="DarkGray"
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding Name}" Margin="10,0,0,0" FontAttributes="Bold" FontSize="Large" TextColor="{StaticResource TitleColor}"></Label>
+            <Grid HorizontalOptions="FillAndExpand" Margin="10,0,10,0" VerticalOptions="StartAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding Description}" FontSize="12" TextColor="{StaticResource NormalTextColor}"></Label>
+                <Image Source="{x:Static constants:Constants.FavUnselectedIcon}" Grid.Column="1" HorizontalOptions="End" ></Image>
+            </Grid>
+                <StackLayout Margin="10,0,0,0" Orientation="Horizontal" IsVisible="{Binding IsRated}" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                    <Frame BackgroundColor="{StaticResource RatingGreenColor}" Margin="0" Padding="10,5,10,5" CornerRadius="5">
+                        <Label Text="{Binding Rating}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White"></Label>
+                               
+                    </Frame>
+                    <Label Text="{Binding RatingCountValues}" VerticalTextAlignment="Center"></Label>
+                </StackLayout>
+
+                <Frame BackgroundColor="{StaticResource LightBackgroundColor}" CornerRadius="5" Padding="5" Margin="10,5,10,5" VerticalOptions="StartAndExpand">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Text="{x:Static constants:Constants.SpecialPriceText}" FontAttributes="Bold" TextColor="{StaticResource OrangeBackgroundColor}"></Label>
+                        <Label Text="{Binding ActualPrice}" FontAttributes="Bold" TextColor="{StaticResource NormalTextColor}" FontSize="Medium"></Label>
+                    </StackLayout>
+                </Frame>
+                <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="2" BackgroundColor="LightGray"></BoxView>
+                <StackLayout Margin="10,0,10,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Label Text="{x:Static constants:Constants.SizeText}" FontSize="Medium" TextColor="{StaticResource NormalTextColor}"></Label>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Frame  BorderColor="LightGray" Margin="5" Padding="20,5,20,5">
+                            <Label Text="{x:Static constants:Constants.SmallSizeText}" TextColor="{StaticResource TitleColor}" VerticalTextAlignment="Center"></Label>
+                        </Frame>
+                        <Frame  BorderColor="LightGray" Margin="5" Padding="20,5,20,5">
+                            <Label Text="{x:Static constants:Constants.MediumSizeText}" TextColor="{StaticResource TitleColor}" VerticalTextAlignment="Center"></Label>
+                        </Frame>
+                        <Frame  BorderColor="LightGray" Margin="5" Padding="20,5,20,5">
+                            <Label Text="{x:Static constants:Constants.LargeSizeText}" TextColor="{StaticResource TitleColor}" VerticalTextAlignment="Center"></Label>
+                        </Frame>
+                        <Frame  BorderColor="LightGray" Margin="5" Padding="20,5,20,5">
+                            <Label Text="{x:Static constants:Constants.ExtraLargeSizeText}" TextColor="{StaticResource TitleColor}" VerticalTextAlignment="Center"></Label>
+                        </Frame>
+                        <Frame  BorderColor="LightGray" Margin="5" Padding="20,5,20,5" HorizontalOptions="StartAndExpand">
+                            <Label Text="{x:Static constants:Constants.DoubleExtraLargeSizeText}" TextColor="{StaticResource TitleColor}" VerticalTextAlignment="Center"></Label>
+                        </Frame>
+                    </StackLayout>
+                  
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+            <BoxView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="2" BackgroundColor="LightGray"></BoxView>
+            <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" Spacing="0" Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+                    <Label Text="{x:Static constants:Constants.AddCartText}" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"></Label>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource OrangeBackgroundColor}">
+                    <Label Text="{x:Static constants:Constants.BuyNowText}" TextColor="{StaticResource BackgroundColor}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                </StackLayout>
+                
+            </StackLayout>
+        
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

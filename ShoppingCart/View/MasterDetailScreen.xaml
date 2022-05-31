@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingCart.View.MasterDetailScreen"
              xmlns:pages="clr-namespace:ShoppingCart.View"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+	ios:Page.UseSafeArea="true"
             NavigationPage.HasNavigationBar="False">
   <FlyoutPage.Flyout>
     <pages:MasterDetailScreenFlyout x:Name="FlyoutPage" />

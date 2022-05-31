@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             x:Class="ShoppingCart.View.ProductsListing" NavigationPage.HasNavigationBar="False"
+             x:Name="ProductList">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <controls:FlowListView FlowColumnCount="2"
+                      SeparatorVisibility="None" HasUnevenRows="false"
+                        Margin="8,0" RowHeight="250"
+                    VerticalOptions="FillAndExpand"   
+                    HorizontalOptions="FillAndExpand" 
+                        FlowItemsSource="{Binding Products}">
+                <controls:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <!--Frame to have rounded corners-->
+                        <Frame
+                                        Margin="8"
+                                        Padding="0"
+                                        BackgroundColor="White"
+                                        BorderColor="White"
+                                        CornerRadius="4"
+                                        HasShadow="true"
+                                       >
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path= BindingContext.ProductsTappedCommand, Source={x:Reference ProductList}}" CommandParameter="{Binding .}"  NumberOfTapsRequired="1"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout
+                                         Margin="10,10"
+                                        Padding="0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Spacing="0"
+                                        VerticalOptions="StartAndExpand">
+
+                            <!--  Product image  -->
+
+                            <Image
+                                            Margin="0,0,0,8"
+                                            Aspect="AspectFill"
+                                            BackgroundColor="LightGray"
+                                            HeightRequest="180"
+                                            HorizontalOptions="Center"
+                                            Source="{Binding PreviewImage}"
+                                            VerticalOptions="Center"
+                                            WidthRequest="200" />
+
+                            <!--  Product name  -->
+                            <Label
+                                            Margin="0,0,0,8"
+                                            
+                                            FontSize="16"
+                                            HorizontalOptions="Center"
+                                            LineHeight="1.25"
+                                            Text="{Binding Name}"
+                                            TextColor="DarkGray" />
+                            <!--Product Description-->
+                            <Label
+                                            Margin="16,4"
+                                            
+                                            FontSize="12"
+                                            HorizontalOptions="StartAndExpand"
+                                            LineHeight="1.25"
+                                            MaxLines="1"
+                                            Text="{Binding Description}"
+                                            TextColor="DarkGray" />
+
+                            <!--Employee name-->
+                            <StackLayout
+                                            Margin="16,4,16,16"
+                                            Orientation="Horizontal"
+                                            Spacing="2">
+
+                                <!--Product Price-->
+                                <Label
+                                              
+                                                FontSize="{OnIdiom Default=20,
+                                                                   Desktop=24}"
+                                           
+                                                Text="{Binding DiscountPrice, StringFormat='${0:0 }'}"
+                                                TextColor="{DynamicResource PrimaryColor}" />
+
+                                <Label
+                                                
+                                                FontSize="12"
+                                            
+                                                Text="{Binding ActualPrice, StringFormat='${0:0.00} '}"
+                                                TextDecorations="Strikethrough"
+                                                VerticalTextAlignment="Center" />
+
+                                <Label
+                                                
+                                                FontSize="12"
+                                               
+                                                Text="{Binding DiscountPercent, StringFormat=' ({0}% OFF)'}"
+                                                TextColor="{x:StaticResource OrangeBackgroundColor}" />
+
+                            </StackLayout>
+
+
+                        </StackLayout>
+                        </Frame>
+
+                    </DataTemplate>
+                </controls:FlowListView.FlowColumnTemplate>
+            </controls:FlowListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

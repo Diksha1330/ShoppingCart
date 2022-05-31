@@ -14,6 +14,12 @@ namespace ShoppingCart.Constants
         public static ImageSource CartIcon = "ic_cart.png";
         public static ImageSource MyOrderIcon = "ic_myorder.png";
         public static ImageSource WishlistIcon = "ic_wishlist.png";
+        public static ImageSource FavSelectedIcon = "ic_favselected.png";
+        public static ImageSource FavUnselectedIcon = "ic_favunselected.png";
+        public static ImageSource PlusIcon = "ic_plus.png";
+        public static ImageSource MinusIcon = "ic_minus.png";
+        public static string EmptyStarIcon = "ic_emptystar.png";
+        public static string FillStarIcon = "ic_fillstar.png";
         #endregion
 
         #region Diksha
@@ -36,6 +42,20 @@ namespace ShoppingCart.Constants
         public const string WishListTab = "WishList";
         public const string MyOrderTab = "My Order";
         public const string CartTab = "Cart";
+        public const string SpecialPriceText = "Special Price";
+        public const string SizeText = "Size";
+        public const string AddCartText = "ADD TO CART";
+        public const string BuyNowText = "BUY NOW";
+        public const string SmallSizeText = "S";
+        public const string MediumSizeText = "M";
+        public const string LargeSizeText = "L";
+        public const string ExtraLargeSizeText = "XL";
+        public const string DoubleExtraLargeSizeText = "XXL";
+        public const string RupeeSymbolText = "₹ ";
+        public const string RateUsHeaderText = "Enjoying the App?";
+        public const string RateUsText = "Rate your experience using ShoppingCart so far.";
+        
+
         #endregion
 
         #region Diksha

@@ -1,4 +1,5 @@
-﻿using ShoppingCart.Models;
+﻿using Rg.Plugins.Popup.Services;
+using ShoppingCart.Models;
 using ShoppingCart.View;
 using System;
 using System.Collections.Generic;
@@ -50,11 +51,14 @@ namespace ShoppingCart.ViewModels
         {
             try
             {
+                bool pattern=false;
                 await m_view.Navigation.PopAsync();
                 LoginModel login = new LoginModel();
                 Regex EmailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-                bool pattern = EmailRegex.IsMatch(emailIdEntry.Text);
-       
+                if (!string.IsNullOrEmpty(emailIdEntry.Text))
+                {
+                  pattern = EmailRegex.IsMatch(emailIdEntry.Text);
+                }
                 if ((string.IsNullOrEmpty(emailIdEntry.Text) || string.IsNullOrWhiteSpace(emailIdEntry.Text)) && (string.IsNullOrEmpty(passwordEntry.Text) || string.IsNullOrWhiteSpace(passwordEntry.Text)))
                 {
 
@@ -62,9 +66,6 @@ namespace ShoppingCart.ViewModels
                     emailIdEntry.Placeholder = "Email id is required!";
                     passwordEntry.PlaceholderColor = Color.Red;
                     passwordEntry.Placeholder = "Password id is required!";
-
-
-
                 }
                 else if (string.IsNullOrEmpty(emailIdEntry.Text) || string.IsNullOrWhiteSpace(emailIdEntry.Text))
                 {
@@ -86,12 +87,10 @@ namespace ShoppingCart.ViewModels
                 {
                     passwordEntry.PlaceholderColor = Color.Red;
                     passwordEntry.Placeholder = "Password id is required!";
-
                 }
-
                 else
                 {
-                    PushContentPage(new Detail());
+                   Application.Current.MainPage=new MasterDetailScreen();
                 }
             }
             catch (Exception ex)
@@ -106,10 +105,10 @@ namespace ShoppingCart.ViewModels
         {
             try
             {
-                await m_view.Navigation.PopAsync();
-                LoginModel login = new LoginModel();
-                //login.UserName;
-                PushContentPage(new Register());
+                var popup = new RateUsPopup();
+                await PopupNavigation.Instance.PushAsync(popup);
+                //await m_view.Navigation.PopAsync();
+                //PushContentPage(new Register());
             }
             catch (Exception ex)
             {

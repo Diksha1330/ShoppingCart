@@ -5,7 +5,12 @@
     <Application.Resources>
         <Color x:Key="NavigationPrimary">#FED325</Color>
         <Color x:Key="OrangeBackgroundColor">#FED325</Color>
+        <Color x:Key="LightBackgroundColor">#fffae6</Color>
+        
         <Color x:Key="BackgroundColor">#FFFFFF</Color>
         <Color x:Key="ButtonFontColor">#FFFFFF</Color>
+        <Color x:Key="RatingGreenColor">#00802b</Color>
+        <Color x:Key="NormalTextColor">#737373</Color>
+        <Color x:Key="TitleColor">#000000</Color>
     </Application.Resources>
 </Application>

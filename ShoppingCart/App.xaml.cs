@@ -1,4 +1,5 @@
-﻿using ShoppingCart.View;
+﻿using DLToolkit.Forms.Controls;
+using ShoppingCart.View;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,8 +11,9 @@ namespace ShoppingCart
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new Login());
+            FlowListView.Init();
+            // MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new MasterDetailScreen());
         }
 
         protected override void OnStart()

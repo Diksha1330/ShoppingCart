@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.View.RateUsPopup"
+             xmlns:ratingbarcontrol="clr-namespace:RatingBarControl;assembly=RatingBarControl"
+             xmlns:rg="http://rotorgames.com"
+             xmlns:constant="clr-namespace:ShoppingCart.Constants">
+    <rg:PopupPage.Animation>
+        <rg:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </rg:PopupPage.Animation>
+
+    
+    <StackLayout HeightRequest="250" Margin="15,35,15,25" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+
+        <Label Text="{x:Static constant:Constants.RateUsHeaderText}"  FontAttributes="Bold" FontSize="Large"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+        <Label Text="{x:Static constant:Constants.RateUsText}" 
+                VerticalOptions="StartAndExpand"  FontSize="16"
+                HorizontalOptions="CenterAndExpand" />
+        
+        <ratingbarcontrol:RatingBar 
+                                    x:Name="rtControl" Margin="10" Padding="10"
+                                    StarHeightRequest="35"  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                                    StarWidthRequest="35"  
+                                    EmptyStarImage="{x:Static constant:Constants.EmptyStarIcon}" 
+                                    FillStarImage="{x:Static constant:Constants.FillStarIcon}" 
+                                    />
+        
+        <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" BorderColor="LightGray" BorderWidth="1" Margin="5,5" BackgroundColor="White" Text="Not Now"/>
+    </StackLayout>    
+</rg:PopupPage>
